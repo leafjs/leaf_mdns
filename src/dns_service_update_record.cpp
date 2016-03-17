@@ -18,21 +18,22 @@ using namespace node;
 namespace node_mdns {
 
 NAN_METHOD(DNSServiceUpdateRecord) {
+    Nan::HandleScope scope;
     if (argumentCountMismatch(info, 5)) {
-      return throwArgumentCountMismatchException(info, 5);
+      info.GetReturnValue().Set(throwArgumentCountMismatchException(info, 5));
     }
 
     if ( ! ServiceRef::HasInstance(info[0])) {
-      return throwTypeError("argument 1 must be a DNSServiceRef (sdRef)");
+      info.GetReturnValue().Set(throwTypeError("argument 1 must be a DNSServiceRef (sdRef)"));
     }
     ServiceRef * serviceRef = Nan::ObjectWrap::Unwrap<ServiceRef>(info[0]->ToObject());
 
     if ( ! info[1]->IsNull()) {
-      return throwError("argument 2 must be zero. Custom records are not supported yet.");
+      info.GetReturnValue().Set(throwError("argument 2 must be zero. Custom records are not supported yet."));
     }
 
     if ( ! info[2]->IsInt32()) {
-      return throwError("argument 3 must be an integer (DNSServiceFlags)");
+      info.GetReturnValue().Set(throwError("argument 3 must be an integer (DNSServiceFlags)"));
     }
     DNSServiceFlags flags = info[2]->ToInteger()->Int32Value();
 
@@ -48,12 +49,12 @@ NAN_METHOD(DNSServiceUpdateRecord) {
             txtLen = TXTRecordGetLength( & ref->GetTxtRecordRef());
             txtRecord = TXTRecordGetBytesPtr( & ref->GetTxtRecordRef());
         } else {
-          return throwTypeError("argument 4 must be a buffer or a dns_sd.TXTRecordRef");
+          info.GetReturnValue().Set(throwTypeError("argument 4 must be a buffer or a dns_sd.TXTRecordRef"));
         }
     }
 
     if ( ! info[4]->IsInt32()) {
-      return throwError("argument 5 must be an integer (ttl)");
+      info.GetReturnValue().Set(throwError("argument 5 must be an integer (ttl)"));
     }
     int ttl = info[4]->ToInteger()->Int32Value();
 
@@ -66,8 +67,9 @@ NAN_METHOD(DNSServiceUpdateRecord) {
             ttl
         );
     if (error != kDNSServiceErr_NoError) {
-      return throwMdnsError(error);
+      info.GetReturnValue().Set(throwMdnsError(error));
     }
+    return;
 }
 
 } // end of namespace node_mdns

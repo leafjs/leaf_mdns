@@ -10,7 +10,7 @@ namespace {
 
 Handle<Value>
 demangle(Arguments const& info) {
-    Nan::HandleScope scope;  
+    Nan::HandleScope scope();
     String::Utf8Value str(info[0]->ToString());
 #ifdef __GNUC__
     int status;
@@ -26,6 +26,6 @@ demangle(Arguments const& info) {
 extern "C"
 void
 init(Handle<Object> target) {
-    Nan::Set(target, Nan::New("demangle").ToLocalChecked(),
+    Nan::Set(target, Nan::New("demangle"),
             Nan::GetFunction(Nan::New<FunctionTemplate>(demangle)));
 }
