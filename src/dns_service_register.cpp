@@ -94,7 +94,7 @@ NAN_METHOD(DNSServiceRegister) {
         }
         has_domain = true;
     }
-    String::Utf8Value domain(info[5]);
+    String::Utf8Value domain(info[5]->ToString());
 
     bool has_host = false;
     if ( ! info[6]->IsNull() && ! info[6]->IsUndefined()) {
