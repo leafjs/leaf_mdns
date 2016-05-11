@@ -1,6 +1,6 @@
 {
-  "name": "leaf-mdns",
-  "version": "1.0.1",
+  "name": "fungi-mdns",
+  "version": "1.0.0",
   "description": "multicast DNS service discovery",
   "main": "./lib/mdns.js",
   "scripts": {
