@@ -1,6 +1,6 @@
 {
   "name": "fungi-mdns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "multicast DNS service discovery",
   "main": "./lib/mdns.js",
   "scripts": {
@@ -68,35 +68,42 @@
     {
       "name": "Toby Ealden",
       "github": "TobyEalden"
+    },
+    {
+      "name": "Ryan Dahl",
+      "email": "ry at tiny clouds dot org",
+      "url": "http://four.livejournal.com/",
+      "github": "ry"
+    },
+    {
+      "name": "Dominic Tarr",
+      "url": "http://twitter.com/dominictarr",
+      "github": "dominictarr"
+    },
+    {
+      "name": "Emil Stenqvist",
+      "github": "emilisto"
+    },
+    {
+      "name": "Toby Ealden",
+      "github": "TobyEalden"
+    },
+    {
+      "name": "Cong Liu",
+      "github": "ghostoy"
+    },
+    {
+      "name": "Tian Zhang",
+      "github": "KhaosT"
+    },
+    {
+      "name": "Chris Ye",
+      "github": "xyezir"
     }
-  , { "name":   "Ryan Dahl"
-    , "email":  "ry at tiny clouds dot org"
-    , "url":    "http://four.livejournal.com/"
-    , "github": "ry"
-    }
-  , { "name":   "Dominic Tarr"
-    , "url":    "http://twitter.com/dominictarr"
-    , "github": "dominictarr"
-    }
-  , { "name":   "Emil Stenqvist"
-    , "github": "emilisto"
-    }
-  , { "name":   "Toby Ealden"
-    , "github": "TobyEalden"
-    }
-  , { "name":   "Cong Liu"
-    , "github": "ghostoy"
-    }
-  , { "name":   "Tian Zhang"
-    , "github": "KhaosT"
-    }
-  , { "name":   "Chris Ye"
-    , "github": "xyezir"
-    }
-  ]
-, "dependencies":
-  { "bindings": "~1.2.1"
-  , "nan": "~2.3.0"
-  }
-, "gypfile": true
+  ],
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "nan": "~2.3.0"
+  },
+  "gypfile": true
 }
