@@ -1,6 +1,6 @@
 {
-  "name": "fungi-mdns",
-  "version": "1.0.1",
+  "name": "leaf-mdns",
+  "version": "1.0.2",
   "description": "multicast DNS service discovery",
   "main": "./lib/mdns.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/agnat/node_mdns.git"
+    "url": "http://github.com/leafjs/leaf_mdns.git"
   },
   "homepage": "http://agnat.github.com/node_mdns",
   "bugs": {
@@ -103,7 +103,7 @@
   ],
   "dependencies": {
     "bindings": "~1.2.1",
-    "nan": "~2.3.0"
+    "nan": "~2.4.0"
   },
   "gypfile": true
 }
